@@ -17,6 +17,7 @@ public class EditItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_item);
         etEditItemEditText = (EditText) findViewById(R.id.etEditItemEditText);
         etEditItemEditText.setText(getIntent().getStringExtra("item_content"));
+        // Move cursor to the end of text field
         etEditItemEditText.setSelection(etEditItemEditText.getText().length());
         index = getIntent().getIntExtra("index", 0);
     }
