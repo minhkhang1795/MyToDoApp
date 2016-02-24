@@ -30,7 +30,18 @@ public class CustomToDoItemAdapter extends ArrayAdapter<ToDoItem> {
         TextView tvPriority = (TextView) convertView.findViewById(R.id.tvPriority);
         // Populate the data into the template view using the data object
         tvItemName.setText(ToDoItem.getToDoItemText());
-        tvPriority.setText(ToDoItem.getPriority());
+        switch(ToDoItem.getPriority()) {
+            case LOW_PRIORITY:
+                tvPriority.setText("LOW");
+                break;
+            case MEDIUM_PRIORITY:
+                tvPriority.setText("MEDIUM");
+                break;
+            case HIGH_PRIORITY:
+                tvPriority.setText("HIGH");
+                break;
+        }
+
         // Return the completed view to render on screen
         return convertView;
     }

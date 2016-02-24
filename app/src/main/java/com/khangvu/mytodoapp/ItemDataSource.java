@@ -33,7 +33,17 @@ public class ItemDataSource {
     public ToDoItem createToDoItem(ToDoItem item) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_TODOITEM, item.getToDoItemText());
-        values.put(MySQLiteHelper.COLUMN_PRIORITY, item.getPriority());
+        switch(item.getPriority()) {
+            case LOW_PRIORITY:
+                values.put(MySQLiteHelper.COLUMN_PRIORITY, "LOW");
+                break;
+            case MEDIUM_PRIORITY:
+                values.put(MySQLiteHelper.COLUMN_PRIORITY, "MEDIUM");
+                break;
+            case HIGH_PRIORITY:
+                values.put(MySQLiteHelper.COLUMN_PRIORITY, "HIGH");
+                break;
+        }
 
         long insertId = database.insert(MySQLiteHelper.TABLE_TODOITEMS, null, values);
         Cursor cursor = database.query(MySQLiteHelper.TABLE_TODOITEMS,
@@ -48,7 +58,17 @@ public class ItemDataSource {
     public ToDoItem updateToDoItem (ToDoItem oldItem, ToDoItem newItem) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_TODOITEM, newItem.getToDoItemText());
-        values.put(MySQLiteHelper.COLUMN_PRIORITY, newItem.getPriority());
+        switch(newItem.getPriority()) {
+            case LOW_PRIORITY:
+                values.put(MySQLiteHelper.COLUMN_PRIORITY, "LOW");
+                break;
+            case MEDIUM_PRIORITY:
+                values.put(MySQLiteHelper.COLUMN_PRIORITY, "MEDIUM");
+                break;
+            case HIGH_PRIORITY:
+                values.put(MySQLiteHelper.COLUMN_PRIORITY, "HIGH");
+                break;
+        }
 
         database.update(
                 MySQLiteHelper.TABLE_TODOITEMS,
@@ -93,7 +113,18 @@ public class ItemDataSource {
         ToDoItem toDoItem = new ToDoItem();
         toDoItem.setId(cursor.getLong(0));
         toDoItem.setTodoItemText(cursor.getString(1));
-        toDoItem.setPriority(cursor.getString(2));
+        switch(cursor.getString(2)) {
+            case "LOW":
+                toDoItem.setPriority(ToDoItem.Priority.LOW_PRIORITY);
+                break;
+            case "MEDIUM":
+                toDoItem.setPriority(ToDoItem.Priority.MEDIUM_PRIORITY);
+                break;
+            case "HIGH":
+                toDoItem.setPriority(ToDoItem.Priority.HIGH_PRIORITY);
+                break;
+        }
+
         // Add more variables here!
         return toDoItem;
     }

@@ -11,8 +11,6 @@
         android:layout_alignParentTop="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="6dp"
         android:text="Buy a car"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -21,7 +19,7 @@
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tvName"
+        android:layout_alignBottom="@+id/tvItemName"
         android:text="MEDIUM"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 

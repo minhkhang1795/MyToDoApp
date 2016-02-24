@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_add"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:icon="@drawable/ic_action_add"
+        android:title="Add"
+        android:visible="true" >
+    </item>
+
+    <!--<button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/add"-->
+        <!--android:id="@+id/btnAddItem"-->
+        <!--android:onClick="onAddItem"-->
+        <!--android:icon="@drawable/ic_action_add"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true" />-->
+
+
+</menu>

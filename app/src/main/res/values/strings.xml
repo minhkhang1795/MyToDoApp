@@ -4,4 +4,11 @@
     <string name="add_item">Add a new item...</string>
     <string name="edit_item_below">Edit Item Below:</string>
     <string name="save">Save</string>
+    <string name="rb_priority_low">Low</string>
+    <string name="rb_priority_high">High</string>
+    <string name="rb_priority_medium">Medium</string>
+    <string name="task_description">Task Description</string>
+    <string name="task_priority">Priority</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
 </resources>

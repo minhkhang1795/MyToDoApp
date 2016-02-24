@@ -6,10 +6,15 @@ package com.khangvu.mytodoapp;
 public class ToDoItem {
     private long id;
     private String item;
-    private String priority;
+    public enum Priority {
+        LOW_PRIORITY,
+        MEDIUM_PRIORITY,
+        HIGH_PRIORITY
+    }
+    private Priority priority;
 
     public ToDoItem() {}
-    public ToDoItem(String item, String priority) {
+    public ToDoItem(String item, Priority priority) {
         this.item = item;
         this.priority = priority;
     }
@@ -30,11 +35,11 @@ public class ToDoItem {
         this.item = item;
     }
 
-    public String getPriority() {
+    public Priority getPriority() {
         return priority;
     }
 
-    public void setPriority(String priority) {
+    public void setPriority(Priority priority) {
         this.priority = priority;
     }
 
