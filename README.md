@@ -36,7 +36,7 @@ Here's a walkthrough of implemented user stories:
 
 _With virtual keyboard_
 
-<img src='http://i.imgur.com/ZAuKSmI.gifv' title='With virtual keyboard' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/ZAuKSmI.gif' title='With virtual keyboard' width='' alt='Video Walkthrough' />
 
 _Without virtual keyboard_
 
