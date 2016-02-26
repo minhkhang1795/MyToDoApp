@@ -44,7 +44,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
-- Sometimes the app runs abnormally! For instance, you cannot disable Done Button when EditText is empty using the .isEmpty() func in OnCreateView() or OnViewCreated(). The lines of code simply do not run in the if/else statement!!! Android bugs I believe.
+- Sometimes the app runs abnormally! For instance, you cannot disable Done Button when EditText .isEmpty() in OnCreateView() or OnViewCreated(). The lines of code simply do not run in the if/else statement!!! Android bugs I believe.
 ```Java
 // DialogFragment: OnCreateView() or OnViewCreated()
 if (editText.toString().isEmpty()) {
