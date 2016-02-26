@@ -1,11 +1,11 @@
 
 # Pre-work - *Name of App Here*
 
-**Name of your app** is an android app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
+**MyToDoApp** is an android app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
 
 Submitted by: **Khang Vu**
 
-Time spent: **X** hours spent in total
+Time spent: **24** hours spent in total
 
 ## User Stories
 
@@ -44,6 +44,20 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
+- Sometimes the app runs abnormally! For instance, you cannot disable Done Button when EditText is empty using the .isEmpty() func in OnCreateView() or OnViewCreated(). The lines of code simply do not run in the if/else statement!!! Android bugs I believe.
+```Java
+// DialogFragment: OnCreateView() or OnViewCreated()
+if (editText.toString().isEmpty()) {
+            buttonSave.setEnabled(false);
+            buttonSave.setTextColor(ContextCompat.getColor(getContext(), R.color.gray));
+        } else {
+            buttonSave.setEnabled(true);
+            buttonSave.setTextColor(ContextCompat.getColor(getContext(), R.color.dark_blue));
+        }
+} // Do not work. No lines of code in if statement or else stament run!
+```
+- Poor debug framework! While debugging, the app may crash unexpectedly although it still runs normally without debugging!
+- Dismissing and showing keyboard are so complicated. Showing keyboard also leads to UI bug and so I disable it!
 
 ## License
 
