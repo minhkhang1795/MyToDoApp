@@ -33,10 +33,12 @@ The following **additional** features are implemented:
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
+With virtual keyboard
 
-<img src='http://i.imgur.com/2PjhjQ0.gif' title='Video Walkthrough with virtual keyboard' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/2PjhjQ0.gif' title='With virtual keyboard' width='' alt='Video Walkthrough' />
 
 Without virtual keyboard
+
 <img src='http://i.imgur.com/2PjhjQ0.gif' title='Without virtual keyboard' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
