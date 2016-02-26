@@ -2,26 +2,40 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    >
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/tvItemName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buy a car"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/tvDate"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20sp"
+        android:text="@string/task_description" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_date"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tvItemName"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="italic"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/tvPriority"
-        android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tvItemName"
-        android:text="MEDIUM"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-
+        android:layout_below="@+id/tvDate"
+        android:layout_marginTop="0sp"
+        android:layout_alignParentRight="true"
+        android:text="@string/task_priority"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="16sp" />
 </RelativeLayout>

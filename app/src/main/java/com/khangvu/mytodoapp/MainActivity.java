@@ -1,7 +1,9 @@
 package com.khangvu.mytodoapp;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(ContextCompat.getColor(getBaseContext(), R.color.dark_blue));
+        }
 
         dataSource = new ItemDataSource(this);
         dataSource.open();
@@ -77,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         editItemDialog.setFinishDialogListener(new EditItemDialogListener() {
             @Override
             public void onFinishEditDialog(ToDoItem item) {
-                ToDoItem newItem = new ToDoItem(item.getToDoItemText(), item.getPriority());
+                ToDoItem newItem = new ToDoItem(item.getToDoItemText(), item.getPriority(), item.getDueDate());
                 newItem = dataSource.createToDoItem(newItem);
                 todoItems.add(newItem);
                 customAdapter.notifyDataSetChanged();
@@ -92,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         editItemDialog.setFinishDialogListener(new EditItemDialogListener() {
             @Override
             public void onFinishEditDialog(ToDoItem item) {
-                ToDoItem newItem = new ToDoItem(item.getToDoItemText(), item.getPriority());
+                ToDoItem newItem = new ToDoItem(item.getToDoItemText(), item.getPriority(), item.getDueDate());
                 newItem = dataSource.updateToDoItem(todoItems.get(index), newItem);
                 todoItems.remove(index);
                 todoItems.add(index, newItem);
@@ -127,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 //        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
 //            dataSource.open();
 //            // Extract name value from result extras
-//            String itemContent = data.getExtras().getString("item_content");
+//            String itemContent = data.getExtras().getString("item_description");
 //            String itemPriority = "MEDIUM";
 //            int index = data.getExtras().getInt("index");
 //

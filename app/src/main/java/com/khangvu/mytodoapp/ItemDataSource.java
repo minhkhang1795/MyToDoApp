@@ -7,6 +7,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Created by duyvu on 2/21/16.
@@ -16,7 +18,9 @@ public class ItemDataSource {
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
     private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_TODOITEM, MySQLiteHelper.COLUMN_PRIORITY };
+            MySQLiteHelper.COLUMN_TODOITEM, MySQLiteHelper.COLUMN_PRIORITY,
+            MySQLiteHelper.COLUMN_DUE_YEAR, MySQLiteHelper.COLUMN_DUE_MONTH,
+            MySQLiteHelper.COLUMN_DUE_DATE };
 
     public ItemDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -44,6 +48,9 @@ public class ItemDataSource {
                 values.put(MySQLiteHelper.COLUMN_PRIORITY, "HIGH");
                 break;
         }
+        values.put(MySQLiteHelper.COLUMN_DUE_DATE, item.getDueDate().get(Calendar.DATE));
+        values.put(MySQLiteHelper.COLUMN_DUE_MONTH, item.getDueDate().get(Calendar.MONTH));
+        values.put(MySQLiteHelper.COLUMN_DUE_YEAR, item.getDueDate().get(Calendar.YEAR));
 
         long insertId = database.insert(MySQLiteHelper.TABLE_TODOITEMS, null, values);
         Cursor cursor = database.query(MySQLiteHelper.TABLE_TODOITEMS,
@@ -69,6 +76,9 @@ public class ItemDataSource {
                 values.put(MySQLiteHelper.COLUMN_PRIORITY, "HIGH");
                 break;
         }
+        values.put(MySQLiteHelper.COLUMN_DUE_DATE, newItem.getDueDate().get(Calendar.DATE));
+        values.put(MySQLiteHelper.COLUMN_DUE_MONTH, newItem.getDueDate().get(Calendar.MONTH));
+        values.put(MySQLiteHelper.COLUMN_DUE_YEAR, newItem.getDueDate().get(Calendar.YEAR));
 
         database.update(
                 MySQLiteHelper.TABLE_TODOITEMS,
@@ -124,8 +134,9 @@ public class ItemDataSource {
                 toDoItem.setPriority(ToDoItem.Priority.HIGH_PRIORITY);
                 break;
         }
-
-        // Add more variables here!
+        int i = cursor.getColumnCount();
+        GregorianCalendar dueDate = new GregorianCalendar(cursor.getInt(3), cursor.getInt(4), cursor.getInt(5));
+        toDoItem.setDueDate(dueDate);
         return toDoItem;
     }
 }

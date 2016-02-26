@@ -8,17 +8,17 @@ import android.widget.EditText;
 
 public class EditItemActivity extends AppCompatActivity {
 
-    EditText etEditItemEditText;
+    EditText etDescription;
     int index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_item);
-        etEditItemEditText = (EditText) findViewById(R.id.etEditItemEditText);
-        etEditItemEditText.setText(getIntent().getStringExtra("item_content"));
+        etDescription = (EditText) findViewById(R.id.etEditItemEditText);
+        etDescription.setText(getIntent().getStringExtra("item_description"));
         // Move cursor to the end of text field
-        etEditItemEditText.setSelection(etEditItemEditText.getText().length());
+        etDescription.setSelection(etDescription.getText().length());
         index = getIntent().getIntExtra("index", 0);
     }
 
@@ -26,7 +26,7 @@ public class EditItemActivity extends AppCompatActivity {
         // Prepare data intent
         Intent data = new Intent();
         // Pass relevant data back as a result
-        data.putExtra("item_content", etEditItemEditText.getText().toString());
+        data.putExtra("item_description", etDescription.getText().toString());
         data.putExtra("index", index); // ints work too
         // Activity finished ok, return the data
         setResult(RESULT_OK, data); // set result code and bundle data for response

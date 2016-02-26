@@ -1,5 +1,7 @@
 package com.khangvu.mytodoapp;
 
+import java.util.GregorianCalendar;
+
 /**
  * Created by duyvu on 2/18/16.
  */
@@ -12,11 +14,13 @@ public class ToDoItem {
         HIGH_PRIORITY
     }
     private Priority priority;
+    private GregorianCalendar dueDate;
 
     public ToDoItem() {}
-    public ToDoItem(String item, Priority priority) {
+    public ToDoItem(String item, Priority priority, GregorianCalendar dueDate) {
         this.item = item;
         this.priority = priority;
+        this.dueDate = dueDate;
     }
 
     public long getId() {
@@ -43,7 +47,14 @@ public class ToDoItem {
         this.priority = priority;
     }
 
-    // Will be used by the ArrayAdapter in the ListView
+    public GregorianCalendar getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(GregorianCalendar dueDate) {
+        this.dueDate = dueDate;
+    }
+
     @Override
     public String toString() {
         return item;

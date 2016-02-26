@@ -7,8 +7,14 @@
     <string name="rb_priority_low">Low</string>
     <string name="rb_priority_high">High</string>
     <string name="rb_priority_medium">Medium</string>
-    <string name="task_description">Task Description</string>
-    <string name="task_priority">Priority</string>
+    <string name="rb_priority_low_capital">LOW</string>
+    <string name="rb_priority_high_capital">HIGH</string>
+    <string name="rb_priority_medium_capital">MEDIUM</string>
+    <string name="task_description">TASK DESCRIPTION</string>
+    <string name="task_priority">PRIORITY</string>
     <string name="done">Done</string>
-    <string name="cancel">Cancel</string>
+    <string name="discard">Discard</string>
+    <string name="due_date">DUE DATE</string>
+    <string name="item_sample">Buy a car</string>
+    <string name="item_date">%1$s %2$s, %3$s</string>
 </resources>

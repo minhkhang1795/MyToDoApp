@@ -5,7 +5,11 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:orientation="vertical"
+    android:clickable="true"
+    android:theme="@style/AppDialogTheme"
+    android:focusableInTouchMode="true"
     android:paddingBottom="16dp"
+    android:paddingTop="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp" >
 
@@ -13,32 +17,39 @@
         android:id="@+id/lbl_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:focusable="true"
         android:text="@string/task_description"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_blue" />
 
     <EditText
         android:id="@+id/txt_item_name"
-        android:layout_width="306dp"
-        android:layout_height="56dp"
-        android:imeOptions="actionDone"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
         android:isScrollContainer="true"
+        android:imeOptions="actionDone"
+        android:textSize="16sp"
         android:inputType="textMultiLine" />
 
     <TextView
         android:id="@+id/lbl_item_priority"
+        android:text="@string/task_priority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:paddingTop="8dp"
-        android:text="@string/task_priority"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_blue" />
 
     <RadioGroup
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:orientation="horizontal"
+        android:weightSum="3"
         android:id="@+id/radio_group_priority"
         android:checkedButton="@+id/rb_priority_low">
 
@@ -46,40 +57,74 @@
             android:id="@+id/rb_priority_low"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"
             android:text="@string/rb_priority_low" />
 
         <RadioButton
             android:id="@+id/rb_priority_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"
             android:text="@string/rb_priority_medium" />
 
         <RadioButton
             android:id="@+id/rb_priority_high"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"
             android:text="@string/rb_priority_high" />
+
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/lbl_pick_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/due_date"
+        android:paddingTop="8dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_blue" />
+
+    <DatePicker
+        android:id="@+id/dp_due_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false" />
+
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="right">
 
         <Button
-            android:id="@+id/btn_done"
+            android:id="@+id/btn_save"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="86dp"
-            android:text="@string/done" />
+            android:background="@android:color/transparent"
+            android:textColor="@color/dark_blue"
+            android:layout_toRightOf="@+id/btn_discard"
+            android:textSize="18sp"
+            android:text="@string/save" />
 
         <Button
-            android:id="@+id/btn_cancel"
+            android:id="@+id/btn_discard"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cancel" />
+            android:layout_marginRight="8dp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/dark_blue"
+            android:textSize="18sp"
+            android:text="@string/discard" />
     </RelativeLayout>
 
 </LinearLayout>

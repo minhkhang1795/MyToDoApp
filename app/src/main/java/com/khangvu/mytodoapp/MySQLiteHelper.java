@@ -13,15 +13,23 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_TODOITEM = "item";
     public static final String COLUMN_PRIORITY = "priority";
+    public static final String COLUMN_DUE_YEAR = "dueyear";
+    public static final String COLUMN_DUE_MONTH = "duemonth";
+    public static final String COLUMN_DUE_DATE = "duedate";
+
 
     private static final String DATABASE_NAME = "commments.db";
     private static final int DATABASE_VERSION = 1;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
-            + TABLE_TODOITEMS + "(" + COLUMN_ID
-            + " integer primary key autoincrement, " + COLUMN_TODOITEM
-            + " text not null, " + COLUMN_PRIORITY + " text not null);";
+            + TABLE_TODOITEMS + "("
+            + COLUMN_ID + " integer primary key autoincrement, "
+            + COLUMN_TODOITEM + " text not null, "
+            + COLUMN_PRIORITY + " text not null, "
+            + COLUMN_DUE_YEAR + " integer, "
+            + COLUMN_DUE_MONTH + " integer, "
+            + COLUMN_DUE_DATE + " integer);";
 
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
