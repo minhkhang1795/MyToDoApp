@@ -1,5 +1,5 @@
 
-# Pre-work - *MyToDoApp*
+# Pre-work - MyToDoApp
 
 **MyToDoApp** is an android app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
 
@@ -64,7 +64,7 @@ if (editText.toString().isEmpty()) {
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2015 Minh-Khang Vu
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
